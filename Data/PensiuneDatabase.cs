@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using MauiApp1.Models;
-using Xamarin.KotlinX.Coroutines.Channels;
 
 
 namespace MauiApp1.Data
@@ -14,10 +13,27 @@ namespace MauiApp1.Data
     {
         readonly SQLiteAsyncConnection _database;
         public PensiuneDatabase(string dbPath)
-        {   _database = new SQLiteAsyncConnection(dbPath);
+        {
+            _database = new SQLiteAsyncConnection(dbPath);
             _database.CreateTableAsync<Pensiune>().Wait();
             _database.CreateTableAsync<Experienta>().Wait();
             _database.CreateTableAsync<ListExperienta>().Wait();
+            _database.CreateTableAsync<Locatie>().Wait();
+        }
+        public Task<List<Locatie>> GetLocatiiAsync()
+        {
+            return _database.Table<Locatie>().ToListAsync();
+        }
+        public Task<int> SaveLocatieAsync(Locatie locatie)
+        {
+            if (locatie.ID != 0)
+            {
+                return _database.UpdateAsync(locatie);
+            }
+            else
+            {
+                return _database.InsertAsync(locatie);
+            }
         }
         public Task<int> SaveExperientaAsync(Experienta experienta)
         {
@@ -50,5 +66,5 @@ namespace MauiApp1.Data
             return _database.QueryAsync<Pensiune>("select P.ID, P.Description from Pensiune P" + " inner join ListExperienta LP" + " on P.ID = LP.ExperientaID where LP.PensiuneID = ?", shoplistid);
         }
     }
-
+    
 }

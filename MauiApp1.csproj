@@ -68,6 +68,9 @@
 	  <Compile Update="ExperientaPage.xaml.cs">
 	    <DependentUpon>ExperientaPage.xaml</DependentUpon>
 	  </Compile>
+	  <Compile Update="LocatieEntryPage.xaml.cs">
+	    <DependentUpon>LocatieEntryPage.xaml</DependentUpon>
+	  </Compile>
 	</ItemGroup>
 
 	<ItemGroup>
@@ -81,6 +84,12 @@
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	  <MauiXaml Update="ListPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="LocatieEntryPage.xaml">
+	    <Generator>MSBuild:Compile</Generator>
+	  </MauiXaml>
+	  <MauiXaml Update="LocatiePage.xaml">
 	    <Generator>MSBuild:Compile</Generator>
 	  </MauiXaml>
 	</ItemGroup>

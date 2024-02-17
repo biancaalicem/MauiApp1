@@ -8,21 +8,27 @@
             Padding="30,0"
             Spacing="25">
             <Image
-                Source="main_main_page.jfif"
+                Source="logo_nou.png"
                 HeightRequest="200"
                 Aspect="AspectFit"
-                SemanticProperties.Description="imagine reprezentativa pentru site" />
+                SemanticProperties.Description="Imagine reprezentativă pentru site" />
+
+            <Label Style="{StaticResource Headline}"
+       SemanticProperties.HeadingLevel="Level1">
+                <Label.FormattedText>
+                    <FormattedString>
+                        <Span Text="Bine ați venit la " />
+                        <Span Text="Pensiunea La Alice si Catalina" FontAttributes="Italic" />
+                    </FormattedString>
+                </Label.FormattedText>
+            </Label>
 
             <Label
-                Text="Bine ati venit la Pensiune.ro!"
-                Style="{StaticResource Headline}"
-                SemanticProperties.HeadingLevel="Level1" />
-
-            <Label
-                Text="Cele mai frumoase pensiuni din Romania"
-                Style="{StaticResource SubHeadline}"
-                SemanticProperties.HeadingLevel="Level2"
-                SemanticProperties.Description="Welcome to dot net Multi platform App U I" />
+    Text="Cea mai frumoasă pensiune din România"
+    Style="{StaticResource SubHeadline}"
+    SemanticProperties.HeadingLevel="Level6"
+    SemanticProperties.Description="Welcome to .NET Multi-platform App UI"
+    FontSize="16" />
 
             <Button
                 x:Name="CounterBtn"
@@ -34,3 +40,4 @@
     </ScrollView>
 
 </ContentPage>
+

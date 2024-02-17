@@ -1,5 +1,4 @@
 using MauiApp1.Models;
-using Xamarin.KotlinX.Coroutines.Channels;
 namespace MauiApp1;
 
 public partial class ExperientaPage : ContentPage
